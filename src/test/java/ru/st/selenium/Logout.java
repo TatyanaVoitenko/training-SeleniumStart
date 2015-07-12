@@ -18,6 +18,8 @@ public class Logout extends TestBase {
   public void testLogout() throws Exception {
     // click | link=Log out | 
     driver.findElement(By.linkText("Log out")).click();
+    // assertConfirmation | Are you sure you want to log out? | 
+    assertTrue(closeAlertAndGetItsText().matches("^Are you sure you want to log out[\\s\\S]$"));
     // assertElementPresent | name=submit | 
     assertTrue(isElementPresent(By.name("submit")));
   }

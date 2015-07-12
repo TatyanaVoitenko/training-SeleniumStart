@@ -18,6 +18,8 @@ public class RemoveUser extends TestBase {
   public void testRemoveUser() throws Exception {
     // click | css=img[alt="Remove"] | 
     driver.findElement(By.cssSelector("img[alt=\"Remove\"]")).click();
+    // assertConfirmation | Are you sure you want to remove this? | 
+    assertTrue(closeAlertAndGetItsText().matches("^Are you sure you want to remove this[\\s\\S]$"));
     // assertElementNotPresent | link=ElenaV | 
     assertFalse(isElementPresent(By.linkText("ElenaV")));
   }

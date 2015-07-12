@@ -10,4 +10,13 @@
  			<class name="ru.st.selenium.Logout"/>
 		</classes>
 	</test>  
+	<test name="Test2">
+		<parameter name="path" value="/"/>
+		<classes>
+		  	<class name="ru.st.selenium.Login"/>
+ 			<class name="ru.st.selenium.FillUserForm"/>
+ 			<class name="ru.st.selenium.RemoveUser"/>
+ 			<class name="ru.st.selenium.Logout"/>
+		</classes>
+	</test>  
 </suite>

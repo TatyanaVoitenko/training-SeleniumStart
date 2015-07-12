@@ -10,16 +10,16 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Logout extends TestBase {
+public class RemoveUser extends TestBase {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
   @Test
-  public void testLogout() throws Exception {
-    // click | link=Log out | 
-    driver.findElement(By.linkText("Log out")).click();
-    // assertElementPresent | name=submit | 
-    assertTrue(isElementPresent(By.name("submit")));
+  public void testRemoveUser() throws Exception {
+    // click | css=img[alt="Remove"] | 
+    driver.findElement(By.cssSelector("img[alt=\"Remove\"]")).click();
+    // assertElementNotPresent | link=ElenaV | 
+    assertFalse(isElementPresent(By.linkText("ElenaV")));
   }
 
   private boolean isElementPresent(By by) {

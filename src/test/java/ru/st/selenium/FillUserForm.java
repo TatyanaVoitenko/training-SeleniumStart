@@ -10,24 +10,32 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Login extends TestBase {
+public class FillUserForm extends TestBase {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
   @Test
-  public void testLogin() throws Exception {
-    // open | /php4dvd/ | 
-    driver.get(baseUrl + "/php4dvd/");
-    // type | id=username | admin
+  public void testFillUserForm() throws Exception {
+    // click | link=User management | 
+    driver.findElement(By.linkText("User management")).click();
+    // type | id=username | ElenaV
     driver.findElement(By.id("username")).clear();
-    driver.findElement(By.id("username")).sendKeys("admin");
-    // type | name=password | admin
-    driver.findElement(By.name("password")).clear();
-    driver.findElement(By.name("password")).sendKeys("admin");
+    driver.findElement(By.id("username")).sendKeys("ElenaV");
+    // type | name=email | elena@email.com
+    driver.findElement(By.name("email")).clear();
+    driver.findElement(By.name("email")).sendKeys("elena@email.com");
+    // type | id=password | 111111
+    driver.findElement(By.id("password")).clear();
+    driver.findElement(By.id("password")).sendKeys("111111");
+    // type | id=password2 | 111111
+    driver.findElement(By.id("password2")).clear();
+    driver.findElement(By.id("password2")).sendKeys("111111");
+    // select | name=permission | label=Editor
+    new Select(driver.findElement(By.name("permission"))).selectByVisibleText("Editor");
     // click | name=submit | 
     driver.findElement(By.name("submit")).click();
-    // assertElementPresent | link=Home | 
-    assertTrue(isElementPresent(By.linkText("Home")));
+    // assertElementPresent | link=ElenaV | 
+    assertTrue(isElementPresent(By.linkText("ElenaV")));
   }
 
   private boolean isElementPresent(By by) {

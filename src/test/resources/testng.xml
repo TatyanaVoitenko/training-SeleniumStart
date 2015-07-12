@@ -23,7 +23,7 @@
 		<parameter name="path" value="/"/>
 		<classes>
 		  	<class name="ru.st.selenium.Login"/>
- 			<class name="ru.st.selenium.FindFilm/>
+ 			<class name="ru.st.selenium.FindFilm"/>
  			<class name="ru.st.selenium.Logout"/>
 		</classes>
 	</test>  
